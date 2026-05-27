@@ -60,7 +60,8 @@ button {
     padding: .6rem 1rem;
     border-radius: 10px;
     border: 0;
-    font-weight: 700
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .primary {
@@ -186,7 +187,7 @@ body.page-cronometro main>.cronometro {
 
 .site-nav a:hover {
     color: white;
-    background: rgba(255, 255, 255, 0.03)
+    background: rgba(7, 247, 15, 0.425)
 }
 
 .site-nav a.active {

@@ -1,0 +1,212 @@
+/* Cronômetro */
+
+:root {
+    /* Cronômetro — paleta teal/verde */
+    --bg: linear-gradient(180deg, #041221, #071528);
+    --card: rgba(255, 255, 255, 0.04);
+    --accent: #00e5a8; /* neon green */
+    --accent2: #06b6d4; /* cyan */
+    --danger: #ef4444
+}
+
+* {
+    transition: all .18s ease
+}
+
+body.page-cronometro {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--bg);
+    color: #dff7ef;
+    font-family: Inter, system-ui, Segoe UI, Roboto
+}
+
+/* animated linear gradient background for cronometro */
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(120deg, rgba(0,229,168,0.06), rgba(6,182,212,0.03));
+    background-size: 300% 300%;
+    animation: chronoBg 10s ease-in-out infinite;
+}
+
+.cronometro {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, .6);
+    width: min(720px, 96vw)
+}
+
+#cronometro {
+    font-size: 3rem;
+    color: #fff;
+    margin: 0 0 1rem 0;
+    display: flex;
+    justify-content: center
+}
+
+.botoes {
+    display: flex;
+    gap: .6rem;
+    justify-content: center
+}
+
+button {
+    padding: .6rem 1rem;
+    border-radius: 10px;
+    border: 0;
+    font-weight: 700
+}
+
+.primary {
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    color: #fff;
+    box-shadow: 0 6px 18px rgba(6, 182, 212, .12)
+}
+
+.danger {
+    background: var(--danger);
+    color: #fff
+}
+
+.ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .06);
+    color: #cfe7f2
+}
+
+.msg {
+    min-height: 1.2rem;
+    margin-top: .6rem;
+    color: #ffd6d6;
+    opacity: 0;
+    transform: translateY(8px);
+}
+
+.msg.visible {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.msg.fade-out {
+    transition: opacity .6s, transform .6s;
+    opacity: 0
+}
+
+@media (max-width:520px) {
+    #cronometro {
+        font-size: 2rem
+    }
+
+    .cronometro {
+        padding: 1rem
+    }
+}
+
+/* Cronometro-specific effect */
+body.page-cronometro #cronometro {
+    animation: glow-pulse 2.6s ease-in-out infinite;
+    letter-spacing: 2px
+}
+
+@keyframes glow-pulse {
+    0% {
+        text-shadow: 0 0 0 rgba(6, 182, 212, 0)
+    }
+
+    50% {
+        text-shadow: 0 8px 30px rgba(6, 182, 212, 0.18)
+    }
+
+    100% {
+        text-shadow: 0 0 0 rgba(6, 182, 212, 0)
+    }
+}
+
+@keyframes chronoBg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Centralização e ajuste de proporção para cronometro */
+body.page-cronometro main {
+    min-height: auto;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+body.page-cronometro main>.cronometro {
+    margin: 0 auto;
+    max-width: 900px;
+    width: 100%;
+}
+
+.site-header {
+    width: 100%;
+    max-width: 1100px;
+    margin: 1rem auto 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .6rem 1rem;
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    backdrop-filter: blur(6px)
+}
+
+.site-header .brand {
+    color: #e6eef6;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem
+}
+
+.site-nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.site-nav a {
+    color: #cfe7f2;
+    text-decoration: none;
+    padding: .4rem .7rem;
+    border-radius: 8px
+}
+
+.site-nav a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.03)
+}
+
+.site-nav a.active {
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    color: white;
+    box-shadow: 0 6px 18px rgba(6, 182, 212, .12)
+}
+
+@media (max-width:560px) {
+    .site-header {
+        margin: 0 auto 1rem auto;
+        padding: .6rem;
+        width: 95vw
+    }
+
+    .site-nav ul {
+        gap: .4rem
+    }
+
+    .site-nav a {
+        padding: .35rem .5rem
+    }
+}

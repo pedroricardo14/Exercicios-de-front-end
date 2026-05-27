@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="page-index">
+    <header class="site-header">
+        <a class="brand" href="index.html">Pedro Ricardo</a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" class="active">Contador</a></li>
+                <li><a href="cronometro.html">Cronômetro</a></li>
+                <li><a href="formulario.html">Formulário</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="circulo">
+            <h1>Contador</h1>
+            <div class="contador">
+                <div class="controles">
+                    <button id="decrementar">-</button>
+                    <span id="valor">0</span>
+                    <button id="incrementar">+</button>
+                </div>
+                <div class="botoes-resetar">
+                    <button id="resetar">Reset</button>
+                </div>
+                <div id="contador-msg" class="msg" aria-live="polite"></div>
+            </div>
+        </div>
+    </main>
+    <script src="./js/contador.js"></script>
+</body>
+</html>

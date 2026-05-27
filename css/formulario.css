@@ -1,0 +1,197 @@
+ :root {
+     /* Formulário — paleta quente (laranja/rosa) */
+     --card: rgba(255, 255, 255, 0.04);
+     --muted: #f3e7e6;
+     --accent: #ff8a65; /* orange */
+     --accent-2: #ff7ab6; /* pink */
+ }
+
+ * {
+     box-sizing: border-box
+ }
+
+ body.page-formulario {
+    font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+    background: linear-gradient(135deg, #0a0f16, #1d1220);
+    color: var(--muted);
+     margin: 0;
+     padding: 0
+ }
+
+ main {
+    min-height: calc(100vh - 84px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(255,138,101,0.04), rgba(255,122,182,0.03));
+    background-size: 250% 250%;
+    animation: formBg 12s ease-in-out infinite;
+ }
+
+ .dividido {
+     display: flex;
+     gap: 2rem;
+     align-items: stretch;
+     max-width: 1100px;
+     width: 96vw
+ }
+
+ .esquerda {
+     flex: 1;
+     margin: 4rem 0 0 0;
+ }
+
+ .direita {
+     flex: 1;
+     display: flex;
+     align-items: center;
+     justify-content: center
+ }
+
+ .cartao {
+     background: var(--card);
+     padding: 2rem;
+     border-radius: 12px;
+     box-shadow: 0 12px 30px rgba(2, 6, 23, .6)
+ }
+
+ .cartao h1 {
+     margin-top: 0;
+     color: #fff
+ }
+
+ form {
+     display: flex;
+     flex-direction: column;
+     gap: .7rem
+ }
+
+ label {
+     font-size: .95rem;
+     color: var(--muted)
+ }
+
+ input[type="text"],
+ input[type="email"] {
+     padding: .6rem .75rem;
+     border-radius: 8px;
+     border: 1px solid rgba(255, 255, 255, .06);
+     background: transparent;
+     color: #fff
+ }
+
+ .form-actions {
+     display: flex;
+     gap: .6rem;
+     margin-top: .6rem
+ }
+
+ .primary {
+     background: linear-gradient(90deg, var(--accent), var(--accent-2));
+     color: white;
+     border: 0;
+     padding: .6rem 1rem;
+     border-radius: 8px
+ }
+
+ .ghost {
+     background: transparent;
+     border: 1px solid rgba(255, 255, 255, .06);
+     color: var(--muted);
+     padding: .5rem .9rem;
+     border-radius: 8px
+ }
+
+ .espaco {
+     width: 100%;
+     height: 360px;
+     border-radius: 12px;
+     border: 2px dashed rgba(255, 255, 255, .04);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: rgba(255, 255, 255, .2);
+     font-style: italic;
+     background: url(../img/fogo.jpg) right/cover no-repeat
+ }
+
+ .msg {
+     min-height: 1.2rem;
+     margin-top: .6rem;
+     color: #ffd6d6;
+     opacity: 0;
+     transform: translateY(8px)
+ }
+
+ .msg.visible {
+     opacity: 1;
+     transform: translateY(0)
+ }
+
+ .msg.fade-out {
+     transition: opacity .6s, transform .6s;
+     opacity: 0
+ }
+
+/* Resultado exibido após envio */
+.resultado {
+    margin-top: .6rem;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.02);
+    padding: .6rem;
+    border-radius: 8px;
+}
+
+.resultado h3 { margin: 0 0 .4rem 0; color: #ffd6a5 }
+.resultado p { margin: .2rem 0 }
+
+ @media (max-width:900px) {
+     .dividido {
+         flex-direction: column
+     }
+
+     .espaco {
+         height: 200px
+     }
+
+    @keyframes formBg {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+ }
+
+ /* Header override for formulario page */
+ body.page-formulario .site-header {
+     background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+     border-radius: 12px;
+     padding: .6rem 1rem;
+     max-width: 1100px;
+     margin: 1rem auto
+ }
+
+ body.page-formulario .site-header .brand {
+     color: #ffd6a5;
+     font-weight: 700
+ }
+
+ body.page-formulario .site-nav a.active {
+     background: linear-gradient(90deg, #ff9a8b, #ff7ab6);
+     color: #fff
+ }
+
+ /* Centralização e ajuste de proporção para formulario */
+ body.page-formulario main {
+     min-height: auto;
+     padding: 2rem;
+     display: flex;
+     align-items: center;
+     justify-content: center
+ }
+
+ body.page-formulario main>.dividido {
+     margin: 0 auto;
+     max-width: 1100px;
+     width: 100%
+ }

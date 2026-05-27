@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro</title>
+    <link rel="stylesheet" href="./css/cronometro.css">
+</head>
+
+<body class="page-cronometro">
+    <header class="site-header">
+        <a class="brand" href="index.html">Pedro Ricardo</a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Contador</a></li>
+                <li><a href="cronometro.html" class="active">Cronômetro</a></li>
+                <li><a href="formulario.html">Formulário</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+    
+        <div class="cronometro">
+            <div class="conteudo">
+                <h1 id="cronometro">00:00:00</h1>
+                <div class="botoes">
+                    <button id="iniciar">Iniciar</button>
+                    <button id="pausar">Pausar</button>
+                    <button id="zerar">Zerar</button>
+                </div>
+                <div id="cron-msg" class="msg" aria-live="polite"></div>
+            </div>
+        </div>
+
+    </main>
+    <script src="./js/cronometro.js"></script>
+</body>
+
+</html>
